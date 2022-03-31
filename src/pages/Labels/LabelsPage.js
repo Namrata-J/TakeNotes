@@ -1,4 +1,4 @@
-import "labelsPage.css";
+import "./labelsPage.css";
 
 const LabelsPage = () => {
     return (
