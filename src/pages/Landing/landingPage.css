@@ -1,6 +1,6 @@
 @import url(../../utils/base.css);
 
-.ap_landing-page {
+.tn_landing-page {
     background-image: url(https://images.unsplash.com/photo-1511285605577-4d62fb50d2f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80);
     background-size: cover;
     background-position: bottom;
@@ -8,44 +8,44 @@
     width: 100%;
 }
 
-.ap_landing-page-content-container {
+.tn_landing-page-content-container {
     align-items: center;
     display: flex;
     justify-content: center;
     height: 100vh;
 }
 
-.ap_landing-page-content {
+.tn_landing-page-content {
     width: 90%;
     height: 90vh;
 }
 
-.ap_landing-page-content h2 {
+.tn_landing-page-content h2 {
     color: var(--most-lightest-brown);
 }
 
-.ap_app-subtitle {
+.tn_app-subtitle {
     margin-top: 3rem;
 }
 
-.ap_app-subtitle h4 {
+.tn_app-subtitle h4 {
     font-size: larger;
 }
 
-.ap_highlighted-subtitle {
+.tn_highlighted-subtitle {
     color: var(--most-lightest-brown);
 }
 
-.ap_app-description {
+.tn_app-description {
     padding-top: 1rem;
     max-width: 50ch;
 }
 
-.ap_landing-page-content button {
+.tn_landing-page-content button {
     margin: 12rem 0rem 1rem 0rem;
 }
 
-.ap_landing-page-login {
+.tn_landing-page-login {
     color: var(--most-lightest-gray);
     font-size: smaller;
     text-decoration: none;
