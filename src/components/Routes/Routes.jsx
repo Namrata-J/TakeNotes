@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { LandingPage, HomePage, LabelsPage, ArchivePage, TrashPage, ProfilePage } from "../../pages";
+import { LandingPage, HomePage, LabelsPage, ArchivePage, TrashPage, ProfilePage, LogInPage, LogOutPage, SignUpPage } from "../../pages";
 
 const RoutesComponent = () => {
     return (
@@ -10,6 +10,9 @@ const RoutesComponent = () => {
             <Route path="/archive" element={ <ArchivePage /> } />
             <Route path="/trash" element={ <TrashPage /> } />
             <Route path="/profile" element={ <ProfilePage /> } />
+            <Route path="/logIn" element={ <LogInPage /> } />
+            <Route path="/logOut" element={ <LogOutPage /> } />
+            <Route path="/signUp" element={ <SignUpPage /> } />
         </Routes>
     );
 }
