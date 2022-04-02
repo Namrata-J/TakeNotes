@@ -37,4 +37,11 @@
     text-decoration: none;
 }
 
+.tn_addNote-primary-btn {
+    background-color: var(--light-brown);
+    color: var(--light-gray);
+}
+
+
+
 
