@@ -1,0 +1,11 @@
+@import url(../../utils/base.css);
+
+.page {
+    background-color: var(--white-color);
+    min-height: 100vh;
+}
+
+.page-main-section {
+    display: flex;
+    width: 100%;
+}
