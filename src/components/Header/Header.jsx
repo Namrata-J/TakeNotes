@@ -71,7 +71,7 @@ const Header = () => {
 
                     </div>
                     <div className="tn_filter-container3">
-                    <button class="tn_popUp-done-btn et_p-simple-btn primary-color btn" onClick={() => closeThePopUpFilterAndSort()} >Done</button>
+                    <button className="tn_popUp-done-btn et_p-simple-btn primary-color btn" onClick={() => closeThePopUpFilterAndSort()} >Done</button>
                     </div>
                 </div>
             </div>
