@@ -31,10 +31,10 @@ const Note = (props) => {
                 <p className="tn_label b-rad1" style={{ display: props.labelDisplay }}>Label 1</p>
             </div>
             <div className="tn_note-title-container">
-                <h4 className="tn_note-title" contentEditable={canEditContent}>Note Title</h4>
+                <h4 className="tn_note-title" contentEditable={canEditContent} suppressContentEditableWarning="true" >Note Title</h4>
             </div>
             <div>
-                <p className="tn_note-body" contentEditable={canEditContent}>
+                <p className="tn_note-body" contentEditable={canEditContent} suppressContentEditableWarning="true" >
                     I am the body of the note
                 </p>
             </div>
