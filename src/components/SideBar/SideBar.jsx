@@ -47,6 +47,9 @@ const SideBar = () => {
                         )
                     })
                 }
+
+                <button className="tn_addNote-primary-btn et_p-simple-btn primary-color btn">Add Note</button>
+
             </div>
         </div>
     );
