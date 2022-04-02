@@ -1,0 +1,40 @@
+@import url(../../utils/base.css);
+
+.tn_sideBar-component {
+    padding: 1rem;
+    padding-left: 0rem;
+}
+
+.tn_sideBar-content {
+    display: flex;
+    flex-direction: column;
+    height: 37rem;
+    width: 13.5rem;
+}
+
+.tn_each-content {
+    padding: 0.5rem 1rem;
+}
+
+.tn_each-content:hover {
+    background-color: var(--light-brown);
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.tn_sideBar-icons {
+    color: var(--light-gray);
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-top: 3px;
+}
+
+.tn_each-content {
+    align-items: center;
+    color: var(--light-gray);
+    display: flex;
+    gap: 2rem;
+    text-decoration: none;
+}
+
+
