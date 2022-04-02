@@ -1,0 +1,129 @@
+@import url(../../utils/base.css);
+
+.tn_header-component {
+    box-shadow: 0px 0px 1px 1px var(--most-lightest-brown);
+    position: relative;
+}
+
+.tn_header-content {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+}
+
+.tn_header-heading {
+    color: var(--light-gray);
+    text-decoration: none;
+}
+
+.tn_header-searchBar {
+    border: transparent;
+    box-shadow: 0px 0px 4px 2px var(--most-lightest-brown);
+    min-width: 30rem;
+    outline: none;
+    padding: 0.5rem 1rem;
+}
+
+.tn_icons-section {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.tn_header-profile-icon {
+    margin: 0;
+}
+
+.header-icon {
+    cursor: pointer;
+    color: var(--light-gray);
+    font-size: 1.5rem;
+}
+
+.tn_filter-popUp-outerContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.tn_filter-popUp {
+    background-color: var(--white-color);
+    border: 1px solid var(--most-lightest-brown);
+    box-shadow: 0px 0px 2px 0px var(--most-lightest-brown);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    position: absolute;
+    width: 22rem;
+    z-index: 2;
+}
+
+.tn_filter-popUp>* {
+    display: flex;
+    padding: 1rem;
+}
+
+.tn_filter-container1 {
+    align-items: center;
+    border-bottom: 1px solid var(--most-lightest-brown);
+    justify-content: space-between;
+}
+
+.tn_filter-container1>* {
+    color: var(--light-gray);
+}
+
+.tn_filter-popUp-closeBtn {
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+.tn_filter-container2 {
+    flex-direction: column;
+    justify-content: start;
+}
+
+.tn_popUp-subheading {
+    color: var(--light-gray);
+    font-size: small;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+    text-align: left;
+}
+
+.tn_filter-container2 input {
+    background-color: var(--light-brown);
+    border: 1px solid var(--most-lightest-brown);
+    color: var(--light-gray);
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+.tn_filter-container2 label {
+    color: var(--light-gray);
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    font-size: small;
+    text-align: left;
+}
+
+.tn_select-label input {
+    margin-top: 1px;
+    width: 20px;
+}
+
+.tn_filter-container3 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tn_popUp-done-btn {
+    background-color: var(--light-brown);
+    color: var(--light-gray);
+}
+
+

@@ -1,0 +1,11 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --light-brown: rgb(252, 230, 183);
+    --most-lightest-brown: rgb(228, 222, 217);
+    --most-lightest-gray: rgb(241, 245, 245);
+}

@@ -1,0 +1,67 @@
+@import url(../../utils/base.css);
+
+.main-section-component {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    height: 39rem;
+    overflow-y: scroll;
+}
+
+.main-section-innersection {
+    min-height: 37rem;
+    padding-top: 2rem;
+    width: 35rem;
+}
+
+.tn_create-Note-container {
+    align-items: flex-start;
+    border: 1px solid var(--most-lightest-brown);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 2px 1px var(--most-lightest-brown);
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+}
+
+.tn_container-heading {
+    color: var(--light-gray);
+}
+
+.tn_container-main-content {
+    width: 100%;
+}
+
+.tn_container-main-content div{
+    border: transparent;
+    display: block;
+    width: 100%;
+    min-height: 3rem;
+    outline: none;
+    text-align: left;
+}
+
+.tn_main-content-title {
+    font-size: large;
+}
+
+[contentEditable=true]:empty:not(:focus):before {
+    content:attr(data-text);
+    color: var(--light-gray);
+}
+
+.tn_check-btn {
+    background-color: var(--light-brown);
+    color: var(--light-gray);
+    cursor: pointer;
+    clip-path: circle();
+    font-size: 1.2rem;
+    padding: 7px 7px 2px 7px;
+    position: absolute;
+    bottom: -12px;
+    right: 10px;
+}
+
+
