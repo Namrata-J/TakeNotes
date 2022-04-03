@@ -4,22 +4,11 @@ import { VscSymbolColor } from "react-icons/vsc";
 import { MdOutlineLabel } from "react-icons/md";
 import { BiArchiveIn } from "react-icons/bi";
 import { CgTrashEmpty } from "react-icons/cg";
-import { useState } from "react";
+import { useNote } from "../../contexts/note-context";
 
 const Note = (props) => {
 
-    const [actionControlDisplay, setActionControlDisplay] = useState("none");
-    const [canEditContent, setCanEditContent] = useState("false");
-
-    const saveClickHandler = () => {
-        setCanEditContent("false")
-        setActionControlDisplay("none")
-    }
-
-    const editClickHandler = () => {
-        setCanEditContent("true")
-        setActionControlDisplay("inline-block")
-    }
+    const { actionControlDisplay, canEditContent, saveClickHandler, editClickHandler } = useNote();
 
     return (
         <div className="tn_note b-rad1">
