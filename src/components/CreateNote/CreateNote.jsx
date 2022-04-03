@@ -1,24 +1,11 @@
 import "./createNote.css";
-import { useState } from "react";
 import { AiOutlineCheck } from "react-icons/ai";
 import { NotesListing } from "../NotesListing/NotesListing";
+import { useCreateNotes } from "../../contexts/createNotes-context";
 
 const CreateNote = () => {
 
-   const [ headingDisplay, setHeadingDisplay ] = useState("block");
-   const [ formContentDisplay, setFormContentDisplay ] = useState("none");
-
-   const getTheFormFocusStyle = () => {
-       setHeadingDisplay("none")
-       setFormContentDisplay("block")
-   }
-
-   const getTheFormInitialStyle = (e) => {
-       e.target.parentNode.parentNode.children[0].innerText = ""
-       e.target.parentNode.parentNode.children[1].innerText = ""
-       setHeadingDisplay("block")
-       setFormContentDisplay("none")
-   }
+    const { headingDisplay, formContentDisplay, getTheFormFocusStyle, getTheFormInitialStyle } = useCreateNotes();
 
     return (
         <div className="tn_createNotes-component main-section-component">
