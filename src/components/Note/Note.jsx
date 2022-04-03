@@ -16,7 +16,7 @@ const Note = (props) => {
         <div className="tn_notes-listing">
             {
                 stateOfNotes.length === 0 ? "" :
-                stateOfNotes.map((note, index) => {
+                stateOfNotes.map(( note, index ) => {
                     return <div className="tn_note b-rad1" key={ index }>
                         <div className="tn_pin-icon-container">
                             <BsPin className="tn_note-icon pin-icon" />
