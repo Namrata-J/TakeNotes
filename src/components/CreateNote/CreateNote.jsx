@@ -2,10 +2,12 @@ import "./createNote.css";
 import { AiOutlineCheck } from "react-icons/ai";
 import { NotesListing } from "../NotesListing/NotesListing";
 import { useCreateNotes } from "../../contexts/createNotes-context";
+import { useCrudOperations } from "../../contexts/crudOperations-context";
 
 const CreateNote = () => {
 
     const { headingDisplay, formContentDisplay, getTheFormFocusStyle, getTheFormInitialStyle } = useCreateNotes();
+    const { dispatchOfNotes } = useCrudOperations();
 
     return (
         <div className="tn_createNotes-component main-section-component">
@@ -15,7 +17,7 @@ const CreateNote = () => {
                     <div className="tn_container-main-content" style={{ display: formContentDisplay }}>
                         <div className="tn_main-content-title" data-text="Title" contentEditable suppressContentEditableWarning="true" ></div>
                         <div className="tn_main-content-note" data-text="Take a note..." contentEditable suppressContentEditableWarning="true" ></div>
-                        <i className="tn_check-btn" onClick={(e) => getTheFormInitialStyle(e)}><AiOutlineCheck /></i>
+                        <i className="tn_check-btn" onClick={(e) => { dispatchOfNotes({ type: "ADD_NOTE", payload: { _title: e.target.parentNode.parentNode.children[0].innerText , _description: e.target.parentNode.parentNode.children[1].innerText }}); getTheFormInitialStyle(e) }}><AiOutlineCheck /></i>
                     </div>
                 </form>
                 <NotesListing />
