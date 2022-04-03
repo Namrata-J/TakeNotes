@@ -1,0 +1,124 @@
+@import url(../../utils/base.css);
+
+.popUp-outerContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.popUp {
+    background-image: url(https://images.unsplash.com/photo-1511285605577-4d62fb50d2f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80);
+    background-size: cover;
+    box-shadow: 0px 0px 3px 0px var(--black);
+    margin-top: 2rem;
+    position: absolute;
+    z-index: 2;
+}
+
+.tn_filter-popUp-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 22rem;
+}
+
+.tn_filter-popUp-container>* {
+    display: flex;
+    padding: 1rem;
+}
+
+.tn_filter-subcontainer1 {
+    align-items: center;
+    border-bottom: 1px solid var(--light-gray);
+    justify-content: space-between;
+}
+
+.tn_filter-subcontainer1>* {
+    color: var(--black);
+}
+
+.tn_filter-popUp-closeBtn {
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+.tn_filter-subcontainer2 {
+    flex-direction: column;
+    justify-content: start;
+}
+
+.tn_popUp-subheading {
+    font-size: small;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+    text-align: left;
+}
+
+.tn_filter-subcontainer2 input {
+    border: transparent;
+    color: var(--light-gray);
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+.tn_filter-subcontainer2 label {
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    font-size: small;
+    text-align: left;
+}
+
+.tn_select-label input {
+    margin-top: 1px;
+    width: 20px;
+}
+
+.tn_filter-subcontainer3 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tn_popUp-done-btn {
+    background-color: var(--white-color);
+}
+
+@media only screen and (max-width: 600px) {
+    .tn_filter-popUp-container {
+        gap: 0rem;
+        max-width: 60%;
+    }
+
+    .tn_filter-subcontainer2 {
+        padding-bottom: 0;
+    }
+
+    .tn_filter-subcontainer3 {
+        padding-top: 0;
+    }
+
+    .tn_popUp-done-btn {
+        margin: 0;
+    }
+
+}
+
+@media only screen and (max-width: 545px) {
+    .tn_filter-popUp-container {
+        max-width: 80%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .tn_filter-subcontainer1 {
+        padding: 0.5rem 1rem;
+    }
+
+    .tn_filter-subcontainer2 {
+        padding-top: 0.5rem;
+    }
+
+    .tn_filter-popUp-container {
+        max-width: 70%;
+    }
+}

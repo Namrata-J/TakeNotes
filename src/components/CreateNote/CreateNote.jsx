@@ -26,8 +26,8 @@ const CreateNote = () => {
                 <form className="tn_create-Note-container b-rad1">
                     <div className="tn_container-heading" onClick={() => getTheFormFocusStyle()} style={{ display: headingDisplay }}>Take a note...</div>
                     <div className="tn_container-main-content" style={{ display: formContentDisplay }}>
-                        <div className="tn_main-content-title" data-text="Title" contentEditable></div>
-                        <div className="tn_main-content-note" data-text="Take a note..." contentEditable></div>
+                        <div className="tn_main-content-title" data-text="Title" contentEditable suppressContentEditableWarning="true" ></div>
+                        <div className="tn_main-content-note" data-text="Take a note..." contentEditable suppressContentEditableWarning="true" ></div>
                         <i className="tn_check-btn" onClick={(e) => getTheFormInitialStyle(e)}><AiOutlineCheck /></i>
                     </div>
                 </form>

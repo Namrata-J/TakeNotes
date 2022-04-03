@@ -7,5 +7,7 @@ import { Note } from "./Note/Note";
 import { LabeledNotes } from "./LabeledNotes/LabeledNotes";
 import { ArchivedNotes } from "./ArchivedNotes/ArchivedNotes";
 import { DeletedNotes } from "./DeletedNotes/DeletedNotes";
+import { SearchBar } from "./SearchBar/SearchBar";
+import { FilterAndSortPopUp } from "./FilterAndSortPopUp/FilterAndSortPopUp";
 
-export { RoutesComponent, Header, SideBar, CreateNote, NotesListing, Note, LabeledNotes, ArchivedNotes, DeletedNotes };
+export { RoutesComponent, Header, SideBar, CreateNote, NotesListing, Note, LabeledNotes, ArchivedNotes, DeletedNotes, SearchBar, FilterAndSortPopUp };
