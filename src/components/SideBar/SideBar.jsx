@@ -42,7 +42,7 @@ const SideBar = () => {
                         return (
                             <Link to={ page.pagePath } className="tn_each-content" key={ index }>
                                 <i className="tn_sideBar-icons">{ page.icon }</i>
-                                <div>{ page.pageName }</div>
+                                <div className="tn_page-name">{ page.pageName }</div>
                             </Link>
                         )
                     })

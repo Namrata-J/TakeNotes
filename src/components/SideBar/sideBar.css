@@ -40,8 +40,54 @@
 .tn_addNote-primary-btn {
     background-color: var(--light-brown);
     color: var(--light-gray);
+} 
+
+@media only screen and (max-width: 1010px) {
+    .tn_sideBar-content {
+        width: 12rem;
+    }
+
+    .tn_each-content {
+        gap: 1rem;
+    }
 }
 
+@media only screen and (max-width: 960px) {
+    .tn_sideBar-content {
+        width: 8rem;
+    }
+}
 
+@media only screen and (max-width: 727px) {
+    .tn_sideBar-component {
+        padding: 1rem 0rem;
+    }
+
+    .tn_sideBar-content {
+        width: 3rem;
+    } 
+
+    .tn_each-content {
+        padding-left: 0.2rem;
+    }
+
+    .tn_page-name {
+        display: none;
+    }
+
+    .tn_addNote-primary-btn {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .tn_sideBar-content {
+        width: 2rem;
+    }
+
+    .tn_sideBar-icons {
+        font-size: 1.1rem;
+    }
+}
 
 
