@@ -4,6 +4,7 @@ import { MdLabelOutline } from "react-icons/md";
 import { BsArchive, BsTrash } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
+import { useCreateNotes } from "../../contexts/createNotes-context";
 
 const sideBarLinksArr = [
     {
@@ -34,13 +35,16 @@ const sideBarLinksArr = [
 ];
 
 const SideBar = () => {
+
+    const { getTheFormFocusStyle } = useCreateNotes();
+
     return (
         <div className="tn_sideBar-component">
             <div className="tn_sideBar-content a-tl">
                 {
                     sideBarLinksArr.map((page, index) => {
                         return (
-                            <Link to={ page.pagePath } className="tn_each-content" key={ index }>
+                            <Link to={ page.pagePath } className="tn_each-content" key={ index } >
                                 <i className="tn_sideBar-icons">{ page.icon }</i>
                                 <div className="tn_page-name">{ page.pageName }</div>
                             </Link>
@@ -48,7 +52,7 @@ const SideBar = () => {
                     })
                 }
 
-                <button className="tn_addNote-primary-btn et_p-simple-btn primary-color btn">Add Note</button>
+                <button className="tn_addNote-primary-btn et_p-simple-btn primary-color btn" onClick={() => getTheFormFocusStyle()} >Add Note</button>
 
             </div>
         </div>
