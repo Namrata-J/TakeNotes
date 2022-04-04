@@ -26,17 +26,17 @@ const Note = (props) => {
                             <p className="tn_label b-rad1" style={{ display: props.labelDisplay }}>Label 1</p>
                         </div>
                         <div className="tn_note-title-container">
-                            <h4 className="tn_note-title" contentEditable={canEditContent} suppressContentEditableWarning="true" >{ note.title==="" ? "Note Title" : note.title }</h4>
+                            <h4 className="tn_note-title" >{ note.title==="" ? "Note Title" : note.title }</h4>
                         </div>
                         <div>
-                            <p className="tn_note-body" contentEditable={canEditContent} suppressContentEditableWarning="true" >
+                            <p className="tn_note-body" >
                                 { note.description === "" ? "I am the body of the note" : note.description }
                             </p>
                         </div>
                         <div className="tn_note-other-options">
                             <div className="tn_note-action-controls-container">
                                 <button className="tn_note-action-control et_p-simple-btn primary-color btn b-rad1" onClick={() => editClickHandler()}>Edit</button>
-                                <button className="tn_note-action-control et_p-simple-btn primary-color btn b-rad1" onClick={() => saveClickHandler()} style={{ display: actionControlDisplay }}>Save</button>
+                                <button className="tn_note-action-control et_p-simple-btn primary-color btn b-rad1" onClick={(e) => { saveClickHandler() }} style={{ display: actionControlDisplay }}>Save</button>
                             </div>
                             <div className="tn_note-action-controls-container icon-controls-container">
                                 <VscSymbolColor className="tn_action-icon" style={{ display: actionControlDisplay }} />
