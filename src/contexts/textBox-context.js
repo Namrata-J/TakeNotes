@@ -9,13 +9,19 @@ const TextBoxProvider = ({ children }) => {
             case "EXPAND_TEXTBOX":
                return { ...stateOfTextBox, headingDisplay: "none", formContentDisplay: "block" }
             case "CLOSE_TEXTBOX":
-               return { ...stateOfTextBox, headingDisplay: "block", formContentDisplay: "none" }
+               return { ...stateOfTextBox, headingDisplay: "block", formContentDisplay: "none", titleText: "", descriptiveText: "" }
+            case "UPDATE_TEXTBOX_TITLE":
+               return { ...stateOfTextBox, titleText: action.payload } 
+            case "UPDATE_TEXTBOX_DESCRIPTION":
+               return { ...stateOfTextBox, descriptiveText: action.payload } 
        }
    }
 
    const initialTextBoxObj = {
        headingDisplay: "block",
        formContentDisplay: "none",
+       titleText: "",
+       descriptiveText: ""
    };
 
    const [ stateOfTextBox, dispatchOfTextBox ] = useReducer( textBoxReducer, initialTextBoxObj );

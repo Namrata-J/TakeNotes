@@ -36,7 +36,7 @@ const Note = (props) => {
                         <div className="tn_note-other-options">
                             <div className="tn_note-action-controls-container">
                                 <button className="tn_note-action-control et_p-simple-btn primary-color btn b-rad1" onClick={() => editClickHandler()}>Edit</button>
-                                <button className="tn_note-action-control et_p-simple-btn primary-color btn b-rad1" onClick={(e) => { saveClickHandler() }} style={{ display: actionControlDisplay }}>Save</button>
+                                <button className="tn_note-action-control et_p-simple-btn primary-color btn b-rad1" onClick={() => { saveClickHandler() }} style={{ display: actionControlDisplay }}>Save</button>
                             </div>
                             <div className="tn_note-action-controls-container icon-controls-container">
                                 <VscSymbolColor className="tn_action-icon" style={{ display: actionControlDisplay }} />
