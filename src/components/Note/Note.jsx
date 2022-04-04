@@ -22,7 +22,7 @@ const Note = (props) => {
                             <BsPin className="tn_note-icon pin-icon" />
                         </div>
                         <div className="tn_note-dateAndLabel-container">
-                            <p className="tn_note-date">Created 26/10/2021</p>
+                            <p className="tn_note-date">Created { `${note.currDate.getDate()}/${note.currDate.getMonth()}/${note.currDate.getFullYear()}` }</p>
                             <p className="tn_label b-rad1" style={{ display: props.labelDisplay }}>Label 1</p>
                         </div>
                         <div className="tn_note-title-container">

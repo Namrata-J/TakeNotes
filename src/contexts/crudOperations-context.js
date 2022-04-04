@@ -8,7 +8,7 @@ const CrudOperationsProvider = ({ children }) => {
     const notesReducer = ( stateOfNotes, action ) => {
         switch(action.type){
             case "ADD_NOTE" : 
-                  return [ ...stateOfNotes, { _id: uuid(), title: action.payload._title, description: action.payload._description }]
+                  return [ ...stateOfNotes, { _id: uuid(), title: action.payload._title, description: action.payload._description, currDate: new Date() }]
         }
     }
 
