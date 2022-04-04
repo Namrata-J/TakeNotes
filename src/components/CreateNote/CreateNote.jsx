@@ -20,6 +20,7 @@ const CreateNote = () => {
                         <i className="tn_check-btn" onClick={(e) => { dispatchOfNotes({ type: "ADD_NOTE", payload: { _title: e.target.parentNode.parentNode.children[0].innerText , _description: e.target.parentNode.parentNode.children[1].innerText }}); getTheFormInitialStyle(e) }}><AiOutlineCheck /></i>
                     </div>
                 </form>
+                
                 <NotesListing />
             </div>
         </div>

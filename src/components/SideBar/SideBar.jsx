@@ -42,7 +42,7 @@ const SideBar = () => {
         <div className="tn_sideBar-component">
             <div className="tn_sideBar-content a-tl">
                 {
-                    sideBarLinksArr.map((page, index) => {
+                    sideBarLinksArr.map(( page, index ) => {
                         return (
                             <Link to={ page.pagePath } className="tn_each-content" key={ index } >
                                 <i className="tn_sideBar-icons">{ page.icon }</i>
