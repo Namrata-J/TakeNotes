@@ -9,7 +9,7 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 const Note = ({ note }) => {
 
-    const { dispatchOfNotes } = useCrudOperations();
+    const { dispatchOfNotes, labelInput, setLabelInput, getTheLabel } = useCrudOperations();
 
     const noteBgColors = ["#e2e8f0", "#fecaca", "#fde047", "#bef264", "#86efac", "#99f6e4", "#67e8f9", "#a5b4fc", "#fb7185", "#a5f3fc"];
 
@@ -21,7 +21,7 @@ const Note = ({ note }) => {
             </div>
             <div className="tn_note-dateAndLabel-container">
                 <p className="tn_note-date">Created {`${note.currDate.getDate()}/${note.currDate.getMonth()}/${note.currDate.getFullYear()}`}</p>
-                <p className="tn_label b-rad1" style={{ backgroundColor: note.bgColor !== "white" ? "var(--white-color)" : "var(--light-brown)" }} >Label 1</p>
+                {note.label !== "" && <p className="tn_label b-rad1" style={{ backgroundColor: note.bgColor !== "white" ? "var(--white-color)" : "var(--light-brown)" }} >{note.label}</p>}
             </div>
             <div className="tn_note-title-container">
                 {!note.canEdit && <h4 className="tn_note-title" >{note.title === "" ? "Note Title" : note.title}</h4>}
@@ -51,7 +51,11 @@ const Note = ({ note }) => {
                             noteBgColors.map((bgColor, index) => <div className="tn_palette-color" key={index} style={{ backgroundColor: bgColor }} onClick={() => dispatchOfNotes({ type: "NOTE_BACKGROUND_COLOR", payload: { note: note, bgColor: bgColor } })} ></div>)
                         }
                     </div>
-                    <MdOutlineLabel className="tn_action-icon" />
+                    <MdOutlineLabel className="tn_action-icon" style={{ display: note.canEdit === true ? "inline-block" : "none" }} onClick={() => dispatchOfNotes({ type: "LABEL_INPUT_DISPLAY", payload: note })} />
+                    <div className="tn_label-input-container b-rad1" style={{ display: note.labelInput? "flex" : "none" }} >
+                            <input className="tn_label-input" placeholder="Label..." value={labelInput} onChange={(e) => getTheLabel(e)} />
+                            <button class="tn_add-label-btn et_p-simple-btn primary-color btn b-rad1" onClick={() => {dispatchOfNotes({ type: "ADD_LABEL", payload: { note: note, label: labelInput } }); setLabelInput(""); }}>Add Label</button>
+                    </div>
                     <BiArchiveIn className="tn_action-icon" />
                     <CgTrashEmpty className="tn_action-icon" onClick={() => dispatchOfNotes({ type: "DELETE_NOTE", payload: note })} />
                 </div>

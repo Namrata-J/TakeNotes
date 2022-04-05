@@ -124,7 +124,35 @@
     z-index: 3;
 }
 
+.tn_label-input-container {
+    align-items: center;
+    border: 1px solid var(--lightest-gray);
+    background-color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: 0.5rem;
+    position: absolute;
+    width: 8rem;
+    top: 36px;
+    left: -28px;
+    z-index: 4;
+}
+
 .tn_palette-color {
     clip-path: circle();
     padding: 0.7rem;
+}
+
+.tn_label-input {
+    border: 1px solid var(--lightest-gray);
+    width: 100%;
+    outline: none;
+    padding: 0.2rem 0.3rem;
+}
+
+.tn_add-label-btn {
+    background-color: var(--light-brown);
+    margin: 0;
+    margin-top: 0.5rem;
 }
