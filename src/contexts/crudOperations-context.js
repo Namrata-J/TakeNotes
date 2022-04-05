@@ -7,8 +7,18 @@ const CrudOperationsProvider = ({ children }) => {
 
     const notesReducer = ( stateOfNotes, action ) => {
         switch(action.type){
-            case "ADD_NOTE" : 
-                  return [ ...stateOfNotes, { _id: uuid(), title: action.payload._title, description: action.payload._description, currDate: new Date() }]
+            case "ADD_NOTE": 
+                return [ ...stateOfNotes, { _id: uuid(), title: action.payload._title, description: action.payload._description, currDate: new Date(), canEdit: false }]
+            case "EDIT_NOTE":
+                return [ ...stateOfNotes.map(currNote => currNote._id === action.payload._id? {...currNote, canEdit: true} : currNote ) ]
+            case "SAVE_NOTE":
+                return [ ...stateOfNotes.map(currNote => currNote._id === action.payload._id? {...currNote, canEdit: false} : currNote ) ]
+            case "UPDATE_NOTE_TITLE":
+                return [ ...stateOfNotes.map(currNote => currNote._id === action.payload.note._id? {...currNote, title: action.payload.value} : currNote ) ]
+            case "UPDATE_NOTE_DESCRIPTION":
+                return [ ...stateOfNotes.map(currNote => currNote._id === action.payload.note._id? {...currNote, description: action.payload.value} : currNote ) ]
+            case "DELETE_NOTE":
+                return [ ...stateOfNotes.filter(currNote => currNote._id !== action.payload._id) ]
         }
     }
 
