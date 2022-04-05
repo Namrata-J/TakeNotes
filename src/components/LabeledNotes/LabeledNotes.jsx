@@ -6,7 +6,7 @@ const LabeledNotes = () => {
         <div className="tn_labeledNotes-component main-section-component">
             <div className="tn_labeledNotes-section main-section-innersection">
                 <div className="tn_notes-listing">
-                    <Note labelDisplay="block" />
+                    <Note />
                 </div>
             </div>
         </div>
