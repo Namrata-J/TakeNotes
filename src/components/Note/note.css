@@ -1,3 +1,7 @@
+.tn_section-heading, .tn_noNotesFounfText {
+    color: var(--light-gray);
+}
+
 .tn_note {
     border: 1px solid var(--most-lightest-brown);
     min-height: 10rem;
