@@ -11,7 +11,7 @@
 }
 
 .tn_note:hover {
-    box-shadow: 0px 0px 2px 1px var(--light-brown);
+    box-shadow: 0px 0px 10px 0px var(--black);
 }
 
 .tn_pin-icon-container {
@@ -85,6 +85,7 @@
 .tn_note-action-controls-container {
     display: flex;
     gap: 1rem;
+    position: relative;
 }
 
 .tn_note-action-controls-container>* {
@@ -106,4 +107,24 @@
 
 .icon-controls-container>*:hover {
     color: var(--black);
+}
+
+.tn_color-palatte {
+    border: 1px solid var(--lightest-gray);
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    gap: 0.1rem;
+    flex-wrap: wrap;
+    padding: 0.3rem;
+    position: absolute;
+    top: 36px;
+    left: -28px;
+    width: 9rem;
+    z-index: 3;
+}
+
+.tn_palette-color {
+    clip-path: circle();
+    padding: 0.7rem;
 }

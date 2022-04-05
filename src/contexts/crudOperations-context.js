@@ -8,11 +8,11 @@ const CrudOperationsProvider = ({ children }) => {
     const notesReducer = ( stateOfNotes, action ) => {
         switch(action.type){
             case "ADD_NOTE": 
-                return [ ...stateOfNotes, { _id: uuid(), title: action.payload._title, description: action.payload._description, currDate: new Date(), canEdit: false, isPinned: false }]
+                return [ ...stateOfNotes, { _id: uuid(), title: action.payload._title, description: action.payload._description, currDate: new Date(), canEdit: false, isPinned: false, bgColor: "white", colorPalette: false }]
             case "EDIT_NOTE":
                 return [ ...stateOfNotes.map(currNote => currNote._id === action.payload._id? {...currNote, canEdit: true} : currNote ) ]
             case "SAVE_NOTE":
-                return [ ...stateOfNotes.map(currNote => currNote._id === action.payload._id? {...currNote, canEdit: false} : currNote ) ]
+                return [ ...stateOfNotes.map(currNote => currNote._id === action.payload._id? {...currNote, canEdit: false, colorPalette: false} : currNote ) ]
             case "UPDATE_NOTE_TITLE":
                 return [ ...stateOfNotes.map(currNote => currNote._id === action.payload.note._id? {...currNote, title: action.payload.value} : currNote ) ]
             case "UPDATE_NOTE_DESCRIPTION":
@@ -23,6 +23,10 @@ const CrudOperationsProvider = ({ children }) => {
                 return [ ...stateOfNotes.map(currNote => currNote._id === action.payload._id? {...currNote, isPinned: true} : currNote ) ]
             case "UNPIN_THE_NOTE":
                 return [ ...stateOfNotes.map(currNote => currNote._id === action.payload._id? {...currNote, isPinned: false} : currNote ) ]
+            case "COLOR_PALETTE_DISPLAY":
+                return [ ...stateOfNotes.map(currNote => currNote._id === action.payload._id? {...currNote, colorPalette: !currNote.colorPalette} : currNote ) ]
+            case "NOTE_BACKGROUND_COLOR":
+                return [ ...stateOfNotes.map(currNote => currNote._id === action.payload.note._id? {...currNote, bgColor: action.payload.bgColor} : currNote ) ]
         }
     }
 
