@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
-import { NoteProvider } from "./contexts/note-context";
 import { HeaderProvider } from "./contexts/header-context";
 import { CrudOperationsProvider } from "./contexts/crudOperations-context";
 import { TextBoxProvider } from "./contexts/textBox-context";
@@ -17,11 +16,9 @@ ReactDOM.render(
     <CrudOperationsProvider>
       <HeaderProvider>
         <TextBoxProvider>
-          <NoteProvider>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-          </NoteProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
         </TextBoxProvider>
       </HeaderProvider>
     </CrudOperationsProvider>
