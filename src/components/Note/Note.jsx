@@ -20,7 +20,7 @@ const Note = ({ note }) => {
                 {note.isPinned && <BsPinFill className="tn_note-icon pin-icon" onClick={() => dispatchOfNotes({ type: "UNPIN_THE_NOTE", payload: note })} />}
             </div>
             <div className="tn_note-dateAndLabel-container">
-                <p className="tn_note-date">Created {`${note.currDate.getDate()}/${note.currDate.getMonth()}/${note.currDate.getFullYear()}`}</p>
+                <p className="tn_note-date">Created { note.currDate }</p>
                 {note.label !== "" && <p className="tn_label b-rad1" style={{ backgroundColor: note.bgColor !== "white" ? "var(--white-color)" : "var(--light-brown)" }} >{note.label}</p>}
             </div>
             <div className="tn_note-title-container">

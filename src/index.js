@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import { HeaderProvider } from "./contexts/header-context";
 import { CrudOperationsProvider } from "./contexts/crudOperations-context";
 import { TextBoxProvider } from "./contexts/textBox-context";
+import { FilterAndSortProvider } from "./contexts/filterAndSortContext";
 
 // Call make Server
 makeServer();
@@ -14,13 +15,15 @@ makeServer();
 ReactDOM.render(
   <StrictMode>
     <CrudOperationsProvider>
-      <HeaderProvider>
-        <TextBoxProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </TextBoxProvider>
-      </HeaderProvider>
+      <FilterAndSortProvider>
+        <HeaderProvider>
+          <TextBoxProvider>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </TextBoxProvider>
+        </HeaderProvider>
+      </FilterAndSortProvider>
     </CrudOperationsProvider>
   </StrictMode>,
   document.getElementById("root")
