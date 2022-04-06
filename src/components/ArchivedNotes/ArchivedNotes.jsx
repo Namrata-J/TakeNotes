@@ -12,7 +12,7 @@ const ArchivedNotes = () => {
         <div className="tn_archivedNotes-component main-section-component">
             <div className="tn_archivedNotes-section main-section-innersection">
                 <div className="tn_notes-listing">
-                    {archivedNotes.length > 0 && <h4 className="tn_section-heading">Archived:-)</h4>}
+                    <h4 className="tn_section-heading">Archived:-)</h4>
                     {
                         [...archivedNotes].reverse().map((note, index) => { return <Note note={note} key={index} /> })
                     }
