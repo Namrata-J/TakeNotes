@@ -8,7 +8,7 @@ const CrudOperationsProvider = ({ children }) => {
     const notesReducer = (stateOfNotes, action) => {
         switch (action.type) {
             case "ADD_NOTE":
-                return [...stateOfNotes, { _id: uuid(), title: action.payload._title, description: action.payload._description, currDate: new Date(), canEdit: false, isPinned: false, bgColor: "white", colorPalette: false, labelInput: false, label: "" }]
+                return [...stateOfNotes, { _id: uuid(), title: action.payload._title, description: action.payload._description, currDate: new Date(), canEdit: false, isPinned: false, bgColor: "white", colorPalette: false, labelInput: false, label: "", isArchived: false }]
             case "EDIT_NOTE":
                 return [...stateOfNotes.map(currNote => currNote._id === action.payload._id ? { ...currNote, canEdit: true } : currNote)]
             case "SAVE_NOTE":
@@ -20,7 +20,7 @@ const CrudOperationsProvider = ({ children }) => {
             case "DELETE_NOTE":
                 return [...stateOfNotes.filter(currNote => currNote._id !== action.payload._id)]
             case "PIN_THE_NOTE":
-                return [...stateOfNotes.map(currNote => currNote._id === action.payload._id ? { ...currNote, isPinned: true } : currNote)]
+                return [...stateOfNotes.map(currNote => currNote._id === action.payload._id ? { ...currNote, isPinned: true, isArchived: false } : currNote)]
             case "UNPIN_THE_NOTE":
                 return [...stateOfNotes.map(currNote => currNote._id === action.payload._id ? { ...currNote, isPinned: false } : currNote)]
             case "COLOR_PALETTE_DISPLAY":
@@ -31,6 +31,8 @@ const CrudOperationsProvider = ({ children }) => {
                 return [...stateOfNotes.map(currNote => currNote._id === action.payload._id ? { ...currNote, colorPalette: false, labelInput: !currNote.labelInput } : currNote)]
             case "ADD_LABEL":
                 return [...stateOfNotes.map(currNote => currNote._id === action.payload.note._id ? { ...currNote, labelInput: false, label: action.payload.label } : currNote)]
+            case "ARCHIVE_NOTE":
+                return [...stateOfNotes.map(currNote => currNote._id == action.payload._id? {...currNote, isPinned: false, isArchived: !currNote.isArchived} : currNote)]
         }
     }
 
