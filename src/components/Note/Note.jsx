@@ -54,7 +54,7 @@ const Note = ({ note }) => {
                     <MdOutlineLabel className="tn_action-icon" style={{ display: note.canEdit === true ? "inline-block" : "none" }} onClick={() => dispatchOfNotes({ type: "LABEL_INPUT_DISPLAY", payload: note })} />
                     <div className="tn_label-input-container b-rad1" style={{ display: note.labelInput ? "flex" : "none" }} >
                         <input className="tn_label-input" placeholder="Label..." value={labelInput} onChange={(e) => getTheLabel(e)} />
-                        <button class="tn_add-label-btn et_p-simple-btn primary-color btn b-rad1" onClick={() => { setLabelInput(""); dispatchOfNotes({ type: "ADD_LABEL", payload: { note: note, label: labelInput } }); }}>Add Label</button>
+                        <button className="tn_add-label-btn et_p-simple-btn primary-color btn b-rad1" onClick={() => { setLabelInput(""); dispatchOfNotes({ type: "ADD_LABEL", payload: { note: note, label: labelInput } }); }}>Add Label</button>
                     </div>
                     <BiArchiveIn className="tn_action-icon" onClick={() => dispatchOfNotes({ type: "ARCHIVE_NOTE", payload: note })} style={{ color: note.isArchived? "var(--black-color)" : "var(--light-gray)" }} /> 
                     <CgTrashEmpty className="tn_action-icon" onClick={() => dispatchOfNotes({ type: "DELETE_NOTE", payload: note })} />
