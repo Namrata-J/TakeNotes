@@ -25,7 +25,7 @@ const Note = ({ note }) => {
             </div>
             <div className="tn_note-title-container">
                 {!note.canEdit && <h4 className="tn_note-title" >{note.title === "" ? "Note Title" : note.title}</h4>}
-                {note.canEdit && <TextareaAutosize className="tn_note-title-inEditMode textarea-inEditMode" placeholder="Title" defaultValue={note.title}  style={{ backgroundColor: note.bgColor }} onChange={(e) => dispatchOfNotes({ type: "UPDATE_NOTE_TITLE", payload: { note: note, value: e.target.value } })} />}
+                {note.canEdit && <TextareaAutosize className="tn_note-title-inEditMode textarea-inEditMode" placeholder="Title" defaultValue={note.title} style={{ backgroundColor: note.bgColor }} onChange={(e) => dispatchOfNotes({ type: "UPDATE_NOTE_TITLE", payload: { note: note, value: e.target.value } })} />}
             </div>
             <div>
                 {
@@ -36,7 +36,7 @@ const Note = ({ note }) => {
                 }
                 {
                     note.canEdit &&
-                    <TextareaAutosize className="tn_note-description-inEditMode textarea-inEditMode" placeholder="Take a note..." defaultValue={note.description}  style={{ backgroundColor: note.bgColor }} onChange={(e) => dispatchOfNotes({ type: "UPDATE_NOTE_DESCRIPTION", payload: { note: note, value: e.target.value } })} />
+                    <TextareaAutosize className="tn_note-description-inEditMode textarea-inEditMode" placeholder="Take a note..." defaultValue={note.description} style={{ backgroundColor: note.bgColor }} onChange={(e) => dispatchOfNotes({ type: "UPDATE_NOTE_DESCRIPTION", payload: { note: note, value: e.target.value } })} />
                 }
             </div>
             <div className="tn_note-other-options">
@@ -46,17 +46,17 @@ const Note = ({ note }) => {
                 </div>
                 <div className="tn_note-action-controls-container icon-controls-container">
                     <VscSymbolColor className="tn_action-icon" style={{ display: note.canEdit === true ? "inline-block" : "none" }} onClick={() => dispatchOfNotes({ type: "COLOR_PALETTE_DISPLAY", payload: note })} />
-                    <div className="tn_color-palatte b-rad1" style={{ display: note.colorPalette? "flex" : "none" }} >
+                    <div className="tn_color-palatte b-rad1" style={{ display: note.colorPalette ? "flex" : "none" }} >
                         {
                             noteBgColors.map((bgColor, index) => <div className="tn_palette-color" key={index} style={{ backgroundColor: bgColor }} onClick={() => dispatchOfNotes({ type: "NOTE_BACKGROUND_COLOR", payload: { note: note, bgColor: bgColor } })} ></div>)
                         }
                     </div>
                     <MdOutlineLabel className="tn_action-icon" style={{ display: note.canEdit === true ? "inline-block" : "none" }} onClick={() => dispatchOfNotes({ type: "LABEL_INPUT_DISPLAY", payload: note })} />
-                    <div className="tn_label-input-container b-rad1" style={{ display: note.labelInput? "flex" : "none" }} >
-                            <input className="tn_label-input" placeholder="Label..." value={labelInput} onChange={(e) => getTheLabel(e)} />
-                            <button class="tn_add-label-btn et_p-simple-btn primary-color btn b-rad1" onClick={() => {dispatchOfNotes({ type: "ADD_LABEL", payload: { note: note, label: labelInput } }); setLabelInput(""); }}>Add Label</button>
+                    <div className="tn_label-input-container b-rad1" style={{ display: note.labelInput ? "flex" : "none" }} >
+                        <input className="tn_label-input" placeholder="Label..." value={labelInput} onChange={(e) => getTheLabel(e)} />
+                        <button class="tn_add-label-btn et_p-simple-btn primary-color btn b-rad1" onClick={() => { setLabelInput(""); dispatchOfNotes({ type: "ADD_LABEL", payload: { note: note, label: labelInput } }); }}>Add Label</button>
                     </div>
-                    <BiArchiveIn className="tn_action-icon" />
+                    <BiArchiveIn className="tn_action-icon" onClick={() => dispatchOfNotes({ type: "DELETE_NOTE", payload: note })} /> 
                     <CgTrashEmpty className="tn_action-icon" onClick={() => dispatchOfNotes({ type: "DELETE_NOTE", payload: note })} />
                 </div>
             </div>
