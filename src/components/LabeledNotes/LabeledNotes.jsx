@@ -6,7 +6,7 @@ const LabeledNotes = () => {
 
     const { stateOfNotes } = useCrudOperations();
 
-    const labeledNotes = stateOfNotes.filter(note => note.label !== "")
+    const labeledNotes = stateOfNotes.filter(note => note.label !== "" && note.isDeleted === false)
 
     return (
         <div className="tn_labeledNotes-component main-section-component">

@@ -10,9 +10,9 @@ const NotesListing = () => {
     const { filterAndSortState } = useFilterAndSort();
 
     const filteredListOfNotes = filterByLabelsFunc(filterAndSortState, filterByCategoryFunc(filterAndSortState, sortByDateFunc(filterAndSortState, stateOfNotes)))
-    const pinnedNotes = filteredListOfNotes.filter(note => note.isPinned === true)
-    const otherNotes = filteredListOfNotes.filter(note => note.isPinned === false && note.isArchived === false)
-    const archivedNotes = filteredListOfNotes.filter(note => note.isArchived === true)
+    const pinnedNotes = filteredListOfNotes.filter(note => note.isPinned === true && note.isDeleted === false)
+    const otherNotes = filteredListOfNotes.filter(note => note.isPinned === false && note.isArchived === false && note.isDeleted === false)
+    const archivedNotes = filteredListOfNotes.filter(note => note.isArchived === true && note.isDeleted === false)
 
     return (
         <div className="tn_notes-listing">

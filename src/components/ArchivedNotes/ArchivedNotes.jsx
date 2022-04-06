@@ -6,7 +6,7 @@ const ArchivedNotes = () => {
 
     const { stateOfNotes } = useCrudOperations();
 
-    const archivedNotes = stateOfNotes.filter(note => note.isArchived === true)
+    const archivedNotes = stateOfNotes.filter(note => note.isArchived === true && note.isDeleted === false)
 
     return (
         <div className="tn_archivedNotes-component main-section-component">

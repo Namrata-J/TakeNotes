@@ -8,7 +8,7 @@ const CrudOperationsProvider = ({ children }) => {
     const notesReducer = (stateOfNotes, action) => {
         switch (action.type) {
             case "ADD_NOTE":
-                return [...stateOfNotes, { _id: uuid(), title: action.payload._title, description: action.payload._description, currDate: `${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`, canEdit: false, isPinned: false, bgColor: "white", colorPalette: false, labelInput: false, label: "", isArchived: false }]
+                return [...stateOfNotes, { _id: uuid(), title: action.payload._title, description: action.payload._description, currDate: `${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`, canEdit: false, isPinned: false, bgColor: "white", colorPalette: false, labelInput: false, label: "", isArchived: false, isDeleted: false }]
             case "EDIT_NOTE":
                 return [...stateOfNotes.map(currNote => currNote._id === action.payload._id ? { ...currNote, canEdit: true } : currNote)]
             case "SAVE_NOTE":
@@ -18,7 +18,7 @@ const CrudOperationsProvider = ({ children }) => {
             case "UPDATE_NOTE_DESCRIPTION":
                 return [...stateOfNotes.map(currNote => currNote._id === action.payload.note._id ? { ...currNote, description: action.payload.value } : currNote)]
             case "DELETE_NOTE":
-                return [...stateOfNotes.filter(currNote => currNote._id !== action.payload._id)]
+                return [...stateOfNotes.map(currNote => currNote._id === action.payload._id? action.payload.isDeleted === true? [...stateOfNotes.filter(currNote => currNote._id !== action.payload._id)] : { ...currNote, isPinned: false, isArchived: false, isDeleted: true } : currNote )]
             case "PIN_THE_NOTE":
                 return [...stateOfNotes.map(currNote => currNote._id === action.payload._id ? { ...currNote, isPinned: true, isArchived: false } : currNote)]
             case "UNPIN_THE_NOTE":
@@ -33,6 +33,8 @@ const CrudOperationsProvider = ({ children }) => {
                 return [...stateOfNotes.map(currNote => currNote._id === action.payload.note._id ? { ...currNote, labelInput: false, label: action.payload.label } : currNote)]
             case "ARCHIVE_NOTE":
                 return [...stateOfNotes.map(currNote => currNote._id == action.payload._id? {...currNote, isPinned: false, isArchived: !currNote.isArchived} : currNote)]
+            case "RESTORE_NOTE":
+                return [...stateOfNotes.map(currNote => currNote._id === action.payload._id? {...currNote, isDeleted: false, isPinned: false, isArchived: false } : currNote )]
         }
     }
 

@@ -4,6 +4,7 @@ import { VscSymbolColor } from "react-icons/vsc";
 import { MdOutlineLabel } from "react-icons/md";
 import { BiArchiveIn } from "react-icons/bi";
 import { CgTrashEmpty } from "react-icons/cg";
+import { FaTrashRestoreAlt } from "react-icons/fa";
 import { useCrudOperations } from "../../contexts/crudOperations-context";
 import TextareaAutosize from 'react-textarea-autosize';
 
@@ -57,7 +58,8 @@ const Note = ({ note }) => {
                         <button className="tn_add-label-btn et_p-simple-btn primary-color btn b-rad1" onClick={() => { setLabelInput(""); dispatchOfNotes({ type: "ADD_LABEL", payload: { note: note, label: labelInput } }); }}>Add Label</button>
                     </div>
                     <BiArchiveIn className="tn_action-icon" onClick={() => dispatchOfNotes({ type: "ARCHIVE_NOTE", payload: note })} style={{ color: note.isArchived? "var(--black-color)" : "var(--light-gray)" }} /> 
-                    <CgTrashEmpty className="tn_action-icon" onClick={() => dispatchOfNotes({ type: "DELETE_NOTE", payload: note })} />
+                    <CgTrashEmpty className="tn_action-icon" onClick={() => dispatchOfNotes({ type: "DELETE_NOTE", payload: note }) } />
+                    {note.isDeleted && <FaTrashRestoreAlt className="tn_action-icon" onClick={() => dispatchOfNotes({ type: "RESTORE_NOTE", payload: note }) } />}
                 </div>
             </div>
         </div>
