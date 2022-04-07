@@ -1,5 +1,5 @@
 import "./sideBar.css";
-import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlineHome, AiOutlineLogout } from "react-icons/ai";
 import { MdLabelOutline } from "react-icons/md";
 import { BsArchive, BsTrash } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
@@ -31,6 +31,11 @@ const sideBarLinksArr = [
         pagePath: "/profile",
         icon: <CgProfile />,
         pageName: "Profile"
+    },
+    {
+        pagePath: "/logOut",
+        icon: <AiOutlineLogout />,
+        pageName: "Logout"
     }
 ];
 
