@@ -1,0 +1,76 @@
+@import url(../../../utils/base.css);
+
+.auth-page {
+    align-items: center;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.auth-container {
+    background-image: url(https://images.unsplash.com/photo-1511285605577-4d62fb50d2f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80);;
+    box-shadow: 0px 0px 3px 0px var(--black);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    width: 20rem;
+}
+
+.auth-container h4 {
+    padding-bottom: 1rem;
+}
+
+.auth-container label {
+    font-size: small;
+    margin-left: 2px;
+    padding-bottom: 4px;
+    text-align: left;
+}
+
+.auth-container input {
+    border: 1px solid var(--lightest-gray);
+    border-radius: 3px;
+    color: var(--light-gray);
+    font-size: smaller;
+    margin-bottom: 10px;
+    padding: 0.2rem 0.5rem;
+    outline: none;
+}
+
+.auth-container input::placeholder {
+    font-size: smaller;
+}
+
+.tn_signUp-pwd-container {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+#tn_signUp-password {
+    width: 100%;
+}
+
+.pwd-icon {
+    cursor: pointer;
+}
+
+.tn_shown-pwd-icon, .tn_hidden-pwd-icon {
+    font-size: 1.5rem;
+}
+
+.auth-container button {
+    background-color: rgb(99, 73, 39);
+    color: var(--white-color);
+    margin: 0;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+@media only screen and (max-width: 375px) {
+    .auth-container {
+        width: 15rem;
+    }
+}

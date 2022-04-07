@@ -1,0 +1,15 @@
+@import url(../../../utils/base.css);
+
+.tn_logout-container-action-btns {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.tn_logout-container-action-btns a {
+    width: 100%;
+}
+
+.tn_logout-container-action-btns button {
+    margin: 0;
+}
