@@ -14,7 +14,7 @@ const LandingPage = () => {
                     <p className="tn_app-description">Manage your daily tasks and workflow in a better way and
                         boost your efficiency without any efforts.
                     </p>
-                    <Link to="/signUp">
+                    <Link to="/home">
                         <button className="tn_p-simple-btn primary-color btn">Join Now</button>
                     </Link>
                     <Link to="logIn" className="tn_landing-page-login">
