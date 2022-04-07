@@ -34,22 +34,24 @@
     width: 100%;
 }
 
-.tn_container-main-content div{
+.tn_container-main-content textarea {
     border: transparent;
     display: block;
     width: 100%;
     min-height: 3rem;
+    height: auto;
     outline: none;
+    resize: none;
     text-align: left;
 }
 
-.tn_main-content-title {
+.tn_main-content-title, .tn_main-content-note {
+    color: var(--light-gray);
     font-size: large;
 }
 
-[contentEditable=true]:empty:not(:focus):before {
-    content:attr(data-text);
-    color: var(--light-gray);
+.tn_main-content-note {
+    font-size: small;
 }
 
 .tn_check-btn {
