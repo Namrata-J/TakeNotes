@@ -7,5 +7,6 @@ import { ProfilePage } from "./Profile/ProfilePage";
 import { LogInPage } from "./Authentication/LogIn/LogIn";
 import { LogOutPage } from "./Authentication/LogOut/LogOut";
 import { SignUpPage } from "./Authentication/SignUp/SignUp";
+import { PageNotFound } from "./NoRouteMatch/NoRouteMatch";
 
-export { LandingPage, HomePage, LabelsPage, ArchivePage, TrashPage, ProfilePage, LogInPage, LogOutPage, SignUpPage };
+export { LandingPage, HomePage, LabelsPage, ArchivePage, TrashPage, ProfilePage, LogInPage, LogOutPage, SignUpPage, PageNotFound };

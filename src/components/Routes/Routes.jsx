@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { LandingPage, HomePage, LabelsPage, ArchivePage, TrashPage, ProfilePage, LogInPage, LogOutPage, SignUpPage } from "../../pages/index";
+import { LandingPage, HomePage, LabelsPage, ArchivePage, TrashPage, ProfilePage, LogInPage, LogOutPage, SignUpPage, PageNotFound } from "../../pages/index";
 
 const RoutesComponent = () => {
     return (
@@ -13,6 +13,7 @@ const RoutesComponent = () => {
             <Route path="/logIn" element={ <LogInPage /> } />
             <Route path="/logOut" element={ <LogOutPage /> } />
             <Route path="/signUp" element={ <SignUpPage /> } />
+            <Route path="*" element={<PageNotFound />} />
         </Routes>
     );
 }
