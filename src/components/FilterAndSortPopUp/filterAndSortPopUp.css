@@ -53,7 +53,7 @@
     text-align: left;
 }
 
-.tn_filter-subcontainer2 input {
+.tn_filter-subcontainer2 select, .tn_filter-subcontainer2 input {
     border: transparent;
     color: var(--light-gray);
     padding: 0.5rem 1rem;
@@ -79,7 +79,7 @@
     justify-content: flex-end;
 }
 
-.tn_popUp-done-btn {
+.tn_popUp-done-btn, .tn_popUp-reset-btn {
     background-color: var(--white-color);
 }
 
@@ -97,8 +97,12 @@
         padding-top: 0;
     }
 
-    .tn_popUp-done-btn {
+    .tn_popUp-done-btn, .tn_popUp-reset-btn {
         margin: 0;
+    }
+
+    .tn_popUp-reset-btn {
+        margin-right: 0.5rem;
     }
 
 }

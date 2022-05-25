@@ -1,3 +1,7 @@
+.tn_section-heading, .tn_noNotesFounfText {
+    color: var(--light-gray);
+}
+
 .tn_note {
     border: 1px solid var(--most-lightest-brown);
     min-height: 10rem;
@@ -7,7 +11,7 @@
 }
 
 .tn_note:hover {
-    box-shadow: 0px 0px 2px 1px var(--light-brown);
+    box-shadow: 0px 0px 10px 0px var(--black);
 }
 
 .tn_pin-icon-container {
@@ -43,17 +47,32 @@
     padding: 0.2rem 0.4rem;
 }
 
-.tn_note-title {
+.tn_note-title, .tn_note-title-inEditMode {
     color: var(--light-gray);
+}
+
+.tn_note-title-inEditMode {
+    font-size: large;
+}
+
+.tn_note-description-inEditMode {
+    font-size: small;
+}
+
+.textarea-inEditMode {
+    border: transparent;
+    display: block;
+    width: 100%;
+    min-height: 3rem;
+    height: auto;
+    outline: none;
+    resize: none;
+    text-align: left;
 }
 
 .tn_note-body {
     font-size: small;
     padding: 1.5rem 0rem 3rem 0rem;
-}
-
-[contentEditable=true] {
-    outline: none;
 }
 
 .tn_note-other-options {
@@ -66,6 +85,7 @@
 .tn_note-action-controls-container {
     display: flex;
     gap: 1rem;
+    position: relative;
 }
 
 .tn_note-action-controls-container>* {
@@ -87,4 +107,52 @@
 
 .icon-controls-container>*:hover {
     color: var(--black);
+}
+
+.tn_color-palatte {
+    border: 1px solid var(--lightest-gray);
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    gap: 0.1rem;
+    flex-wrap: wrap;
+    padding: 0.3rem;
+    position: absolute;
+    top: 36px;
+    left: -28px;
+    width: 9rem;
+    z-index: 3;
+}
+
+.tn_label-input-container {
+    align-items: center;
+    border: 1px solid var(--lightest-gray);
+    background-color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: 0.5rem;
+    position: absolute;
+    width: 8rem;
+    top: 36px;
+    left: -28px;
+    z-index: 4;
+}
+
+.tn_palette-color {
+    clip-path: circle();
+    padding: 0.7rem;
+}
+
+.tn_label-input {
+    border: 1px solid var(--lightest-gray);
+    width: 100%;
+    outline: none;
+    padding: 0.2rem 0.3rem;
+}
+
+.tn_add-label-btn {
+    background-color: var(--light-brown);
+    margin: 0;
+    margin-top: 0.5rem;
 }

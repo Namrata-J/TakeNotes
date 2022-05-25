@@ -1,10 +1,10 @@
 import "./sideBar.css";
-import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlineHome, AiOutlineLogout } from "react-icons/ai";
 import { MdLabelOutline } from "react-icons/md";
 import { BsArchive, BsTrash } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
-import { useCreateNotes } from "../../contexts/createNotes-context";
+import { useTextBox } from "../../contexts/textBox-context";
 
 const sideBarLinksArr = [
     {
@@ -31,18 +31,23 @@ const sideBarLinksArr = [
         pagePath: "/profile",
         icon: <CgProfile />,
         pageName: "Profile"
+    },
+    {
+        pagePath: "/logOut",
+        icon: <AiOutlineLogout />,
+        pageName: "Logout"
     }
 ];
 
 const SideBar = () => {
 
-    const { getTheFormFocusStyle } = useCreateNotes();
+    const { dispatchOfTextBox } = useTextBox();
 
     return (
         <div className="tn_sideBar-component">
             <div className="tn_sideBar-content a-tl">
                 {
-                    sideBarLinksArr.map((page, index) => {
+                    sideBarLinksArr.map(( page, index ) => {
                         return (
                             <Link to={ page.pagePath } className="tn_each-content" key={ index } >
                                 <i className="tn_sideBar-icons">{ page.icon }</i>
@@ -52,7 +57,7 @@ const SideBar = () => {
                     })
                 }
 
-                <button className="tn_addNote-primary-btn et_p-simple-btn primary-color btn" onClick={() => getTheFormFocusStyle()} >Add Note</button>
+                <button className="tn_addNote-primary-btn et_p-simple-btn primary-color btn" onClick={() => dispatchOfTextBox({ type: "EXPAND_TEXTBOX" })} >Add Note</button>
 
             </div>
         </div>
