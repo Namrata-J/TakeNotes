@@ -8,23 +8,26 @@ import { HeaderProvider } from "./contexts/header-context";
 import { CrudOperationsProvider } from "./contexts/crudOperations-context";
 import { TextBoxProvider } from "./contexts/textBox-context";
 import { FilterAndSortProvider } from "./contexts/filterAndSortContext";
+import { AuthProvider } from "./contexts/auth-context";
 
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <StrictMode>
-    <CrudOperationsProvider>
-      <FilterAndSortProvider>
-        <HeaderProvider>
-          <TextBoxProvider>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-          </TextBoxProvider>
-        </HeaderProvider>
-      </FilterAndSortProvider>
-    </CrudOperationsProvider>
+    <AuthProvider>
+      <CrudOperationsProvider>
+        <FilterAndSortProvider>
+          <HeaderProvider>
+            <TextBoxProvider>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </TextBoxProvider>
+          </HeaderProvider>
+        </FilterAndSortProvider>
+      </CrudOperationsProvider>
+    </AuthProvider>
   </StrictMode>,
   document.getElementById("root")
 );

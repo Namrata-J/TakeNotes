@@ -1,6 +1,6 @@
 import "./deletedNotes.css";
 import { Note } from "../Note/Note";
-import { useCrudOperations } from "../../contexts/crudOperations-context";
+import { useCrudOperations } from "../../contexts/";
 
 const DeletedNotes = () => {
 

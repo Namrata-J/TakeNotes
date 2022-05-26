@@ -1,5 +1,5 @@
 import "./searchBar.css";
-import { useHeader } from "../../contexts/header-context";
+import { useHeader } from "../../contexts/";
 
 const SearchBar = () => {
 

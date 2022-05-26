@@ -4,7 +4,7 @@ import { MdLabelOutline } from "react-icons/md";
 import { BsArchive, BsTrash } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
-import { useTextBox } from "../../contexts/textBox-context";
+import { useTextBox } from "../../contexts/";
 
 const sideBarLinksArr = [
     {

@@ -5,7 +5,7 @@ import { MdOutlineLabel } from "react-icons/md";
 import { BiArchiveIn } from "react-icons/bi";
 import { CgTrashEmpty } from "react-icons/cg";
 import { FaTrashRestoreAlt } from "react-icons/fa";
-import { useCrudOperations } from "../../contexts/crudOperations-context";
+import { useCrudOperations } from "../../contexts/";
 import TextareaAutosize from 'react-textarea-autosize';
 
 const Note = ({ note }) => {
