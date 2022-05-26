@@ -15,19 +15,19 @@ makeServer();
 
 ReactDOM.render(
   <StrictMode>
-    <AuthProvider>
-      <CrudOperationsProvider>
-        <FilterAndSortProvider>
-          <HeaderProvider>
-            <TextBoxProvider>
-              <BrowserRouter>
+    <BrowserRouter>
+      <AuthProvider>
+        <CrudOperationsProvider>
+          <FilterAndSortProvider>
+            <HeaderProvider>
+              <TextBoxProvider>
                 <App />
-              </BrowserRouter>
-            </TextBoxProvider>
-          </HeaderProvider>
-        </FilterAndSortProvider>
-      </CrudOperationsProvider>
-    </AuthProvider>
+              </TextBoxProvider>
+            </HeaderProvider>
+          </FilterAndSortProvider>
+        </CrudOperationsProvider>
+      </AuthProvider>
+    </BrowserRouter>
   </StrictMode>,
   document.getElementById("root")
 );

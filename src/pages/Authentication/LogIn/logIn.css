@@ -1,2 +1,8 @@
 @import url(../../../utils/base.css);
 
+.auth-container p {
+    cursor: pointer;
+    color: var(--white-color);
+    padding-top: 0.7rem;
+    font-size: 0.7rem;
+}
