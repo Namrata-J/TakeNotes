@@ -1,8 +1,6 @@
 import "./filterAndSortPopUp.css";
 import { GrFormClose } from "react-icons/gr";
-import { useHeader } from "../../contexts/header-context";
-import { useCrudOperations } from "../../contexts/crudOperations-context";
-import { useFilterAndSort } from "../../contexts/filterAndSortContext";
+import { useHeader, useCrudOperations, useFilterAndSort } from "../../contexts/";
 
 const FilterAndSortPopUp = () => {
 

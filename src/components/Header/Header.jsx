@@ -4,7 +4,7 @@ import { AiOutlineSetting } from "react-icons/ai";
 import { BsSunFill } from "react-icons/bs";
 import { GiToggles } from "react-icons/gi";
 import { FiSearch } from "react-icons/fi";
-import { useHeader } from "../../contexts/header-context";
+import { useHeader } from "../../contexts/";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { FilterAndSortPopUp } from "../FilterAndSortPopUp/FilterAndSortPopUp";
 

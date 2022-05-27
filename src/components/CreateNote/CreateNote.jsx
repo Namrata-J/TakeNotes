@@ -1,8 +1,7 @@
 import "./createNote.css";
 import { AiOutlineCheck } from "react-icons/ai";
 import { NotesListing } from "../NotesListing/NotesListing";
-import { useTextBox } from "../../contexts/textBox-context";
-import { useCrudOperations } from "../../contexts/crudOperations-context";
+import { useTextBox, useCrudOperations } from "../../contexts/";
 import TextareaAutosize from 'react-textarea-autosize';
 
 const CreateNote = () => {
