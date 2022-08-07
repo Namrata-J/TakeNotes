@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { RequiresAuth } from "../";
+import { RequiresAuth } from "..";
 import { LandingPage, HomePage, LabelsPage, ArchivePage, TrashPage, ProfilePage, LogInPage, LogOutPage, SignUpPage, PageNotFound } from "../../pages/index";
 
 const RoutesComponent = () => {

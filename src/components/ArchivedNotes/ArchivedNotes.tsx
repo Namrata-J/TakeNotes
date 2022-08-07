@@ -1,6 +1,6 @@
 import "./archivedNotes.css";
 import { Note } from "../Note/Note";
-import { useCrudOperations } from "../../contexts/";
+import { useCrudOperations } from "../../contexts";
 
 const ArchivedNotes = () => {
 
