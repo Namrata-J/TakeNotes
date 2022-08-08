@@ -1,6 +1,6 @@
 import "./notesListing.css";
 import { Note } from "../Note/Note";
-import { useCrudOperations, useFilterAndSort } from "../../contexts/";
+import { useCrudOperations, useFilterAndSort } from "../../contexts";
 import { sortByDateFunc, filterByCategoryFunc, filterByLabelsFunc } from "../../utils/filterAndSortFunc";
 
 const NotesListing = () => {

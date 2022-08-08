@@ -6,7 +6,7 @@ const LogOutPage = () => {
 
     const { setIsUserLoggedIn } = useAuth();
 
-    const logoutClickHandler = () => {
+    const logoutClickHandler = (): void => {
         setIsUserLoggedIn(false)
     }
 
@@ -19,7 +19,11 @@ const LogOutPage = () => {
                         <button className="et_p-simple-btn primary-color btn">Cancel</button>
                     </Link>
                     <Link to="/">
-                        <button className="et_p-simple-btn primary-color btn" onClick={() => logoutClickHandler()}>LogOut</button>
+                        <button
+                            className="et_p-simple-btn primary-color btn"
+                            onClick={() => logoutClickHandler()}>
+                            LogOut
+                        </button>
                     </Link>
                 </div>
             </div>
