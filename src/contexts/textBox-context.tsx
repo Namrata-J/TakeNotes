@@ -1,5 +1,6 @@
+import { textBoxReducer } from "../reducers/";
 import { useReducer, useContext, createContext } from "react";
-import { childrenProp, textBoxObjType, textBoxAction, textBoxContextProps } from "./contextFiles.types";
+import { childrenProp, textBoxObjType, textBoxContextProps } from "./contextFiles.types";
 
 const initialTextBoxContextValue = {
    stateOfTextBox: {
@@ -14,19 +15,6 @@ const initialTextBoxContextValue = {
 const textBoxContext = createContext<textBoxContextProps>(initialTextBoxContextValue);
 
 const TextBoxProvider = ({ children }: childrenProp): JSX.Element => {
-
-   const textBoxReducer = (stateOfTextBox: textBoxObjType, action: textBoxAction): textBoxObjType => {
-      switch (action.type) {
-         case "EXPAND_TEXTBOX":
-            return { ...stateOfTextBox, headingDisplay: "none", formContentDisplay: "block" }
-         case "CLOSE_TEXTBOX":
-            return { ...stateOfTextBox, headingDisplay: "block", formContentDisplay: "none", titleText: "", descriptiveText: "" }
-         case "UPDATE_TEXTBOX_TITLE":
-            return { ...stateOfTextBox, titleText: action.payload }
-         case "UPDATE_TEXTBOX_DESCRIPTION":
-            return { ...stateOfTextBox, descriptiveText: action.payload }
-      }
-   }
 
    const initialTextBoxObj: textBoxObjType = {
       headingDisplay: "block",

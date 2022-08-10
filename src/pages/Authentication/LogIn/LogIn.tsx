@@ -1,11 +1,14 @@
 import "./logIn.css";
-import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../contexts";
+import { useNavigate, useLocation } from "react-router-dom";
+import { locationProp } from "../../../contexts/contextFiles.types";
+import { loginHandler, handleGuestLogin } from "../../../services/auth/";
 
 const LogInPage = () => {
 
     const navigate = useNavigate();
-    const { formData, setFormData, logInErrMsg, setLogInErrMsg, loginHandler, handleGuestLogin } = useAuth();
+    const location: locationProp = useLocation();
+    const { formData, setFormData, logInErrMsg, setLogInErrMsg, setIsUserLoggedIn } = useAuth();
 
     return (
         <div className="tn_login-page auth-page">
@@ -45,13 +48,13 @@ const LogInPage = () => {
                     <button
                         type="submit"
                         className="et_p-simple-btn primary-color btn"
-                        onClick={(e) => loginHandler({ e: e })}>
+                        onClick={(e) => loginHandler({ e }, { formData, setIsUserLoggedIn, setFormData, setLogInErrMsg }, navigate)}>
                         LogIn
                     </button>
                 </form>
                 <button
                     className="et_p-simple-btn primary-color btn"
-                    onClick={() => handleGuestLogin()}>
+                    onClick={() => handleGuestLogin(setIsUserLoggedIn, navigate, location)}>
                     LogIn As A Guest
                 </button>
                 <div>

@@ -1,4 +1,5 @@
 import React from "react"
+import { NavigationType } from "react-router-dom"
 
 export type formData = {
     userEmail: string,
@@ -22,13 +23,10 @@ export type authContextProps = {
     setIsUserLoggedIn: React.Dispatch<React.SetStateAction<boolean>>,
     formData: formData,
     setFormData: React.Dispatch<React.SetStateAction<formData>>,
-    signUpHandler: ({ e }) => Promise<void>,
     signUpErrMsg: string,
     setSignUpErrMsg: React.Dispatch<React.SetStateAction<string>>,
     logInErrMsg: string,
-    setLogInErrMsg: React.Dispatch<React.SetStateAction<string>>,
-    loginHandler: ({ e }) => Promise<void>,
-    handleGuestLogin: () => Promise<void>
+    setLogInErrMsg: React.Dispatch<React.SetStateAction<string>>
 }
 
 export type note = {
@@ -182,4 +180,18 @@ export type textBoxAction =
 export type textBoxContextProps = {
     stateOfTextBox: textBoxObjType,
     dispatchOfTextBox: React.Dispatch<textBoxAction>
+}
+
+export type authSignupServiceProp = {
+    formData: formData,
+    setIsUserLoggedIn: React.Dispatch<React.SetStateAction<boolean>>,
+    setFormData: React.Dispatch<React.SetStateAction<formData>>,
+    setSignUpErrMsg: React.Dispatch<React.SetStateAction<string>>
+}
+
+export type authloginServiceProp = {
+    formData: formData,
+    setIsUserLoggedIn: React.Dispatch<React.SetStateAction<boolean>>,
+    setFormData: React.Dispatch<React.SetStateAction<formData>>,
+    setLogInErrMsg:React.Dispatch<React.SetStateAction<string>>
 }

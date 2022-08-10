@@ -2,6 +2,7 @@ import "./signUp.css";
 import { useState } from "react";
 import { useAuth } from "../../../contexts";
 import { useNavigate } from "react-router-dom";
+import { signUpHandler } from "../../../services/auth/";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const SignUpPage = () => {
@@ -9,7 +10,7 @@ const SignUpPage = () => {
     const navigate = useNavigate();
     const [showPwd, setShowPwd] = useState(false);
     const [pwdType, setPwdType] = useState("password");
-    const { formData, setFormData, signUpHandler, signUpErrMsg, setSignUpErrMsg } = useAuth();
+    const { formData, setFormData, signUpErrMsg, setSignUpErrMsg, setIsUserLoggedIn } = useAuth();
 
     return (
         <div className="tn_signup-page auth-page">
@@ -69,9 +70,9 @@ const SignUpPage = () => {
                     </div>
 
                     <button
-                        type="submit"
+                        type="button"
                         className="et_p-simple-btn primary-color btn"
-                        onClick={(e) => signUpHandler({ e })}>
+                        onClick={(e) => signUpHandler({ e }, { formData, setIsUserLoggedIn, setFormData, setSignUpErrMsg }, navigate)}>
                         SignUp
                     </button>
                 </form>
