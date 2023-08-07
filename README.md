@@ -20,6 +20,12 @@ TakeNotes is a note taking app, you can pen down all your notes here, besides it
 * Home
 * Trash
 
+### Features
+- Authentication with validation using regex
+- create note, notes listing, filter & sort functionality
+- pin/unpin, archive/unarchive, delete/permanently delete/restore, edit&save note functionality
+- clean UI, crud operations
+
 ### Functionalities
 
 This app is divided into multiple components, the major components are createNote and Note component.
